@@ -25,6 +25,10 @@ public:
     Token(TokenType t = TokenType::END);
     Token (double num);
     Token(TokenType t, const string& txt);
+
+    string formatToken() const;
+    
+    friend std::ostream& operator<<(std::ostream& os, const Token& t);
 };
 
 /*
