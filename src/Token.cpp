@@ -23,6 +23,7 @@ std::string Token::formatToken() const {
         case TokenType::SUB : return "[SUB : -]";
         case TokenType::MUL : return "[MUL : *]";
         case TokenType::DIV : return "[DIV : /]";
+        case TokenType::POW : return "[POW : ^]";
         case TokenType::LPAREN : return "[LPAREN]";
         case TokenType::RPAREN : return "[RPAREN]";
         case TokenType::END : return "[END]"; 

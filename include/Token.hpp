@@ -10,6 +10,7 @@ enum class TokenType {
     SUB,
     MUL,
     DIV,
+    POW,
     LPAREN,
     RPAREN
 };

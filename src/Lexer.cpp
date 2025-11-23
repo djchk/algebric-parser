@@ -70,7 +70,7 @@ Token Lexer::next() {
         case '/' : return Token(TokenType::DIV, "/");
         case '(' : return Token(TokenType::LPAREN, "(");
         case ')' : return Token(TokenType::RPAREN, ")");
-        case ',' : return Token(TokenType::COMMA, ",");
+        case '^' : return Token(TokenType::POW, "^");
         default:
             throw std::runtime_error("Invalid Operation or character");
     }

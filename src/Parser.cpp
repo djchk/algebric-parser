@@ -50,8 +50,12 @@ std::shared_ptr<ASTNode> Parser::parseUnary() {
 }
 
 std::shared_ptr<ASTNode> Parser::parseFactor() {
-    // keeping this to extend the exponents in future
-    return parseUnary();
+    auto node = parseUnary();
+    if (this->curr.type == TokenType::POW) {
+        eat(TokenType::POW);
+        node = std::make_shared<BinaryOpsNode>("^", node, parseFactor());
+    }
+    return node;
 }
 
 std::shared_ptr<ASTNode> Parser::parseTerm() {
