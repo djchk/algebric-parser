@@ -1,9 +1,8 @@
 #include "../include/Lexer.hpp"
 #include <cctype>
 #include <stdexcept>
-using namespace std;
 
-Lexer::Lexer(const string& txt) 
+Lexer::Lexer(const std::string& txt) 
     : src(txt), index(0), curr(txt.empty() ? '\0' : txt[0]) {}
 
 void Lexer::advance() {
@@ -30,13 +29,13 @@ bool Lexer::peekIsDigit() const {
 }
 
 Token Lexer::numToken() {
-    string s;
+    std::string s;
     int dots = 0;
 
     while (isDigit(curr) || curr == '.') {
         if (curr == '.') {
             dots++;
-            if (dots > 1) throw runtime_error("Invalid Number format");
+            if (dots > 1) throw std::runtime_error("Invalid Number format");
         }
         s += curr;
         advance();
@@ -45,12 +44,12 @@ Token Lexer::numToken() {
 }
 
 Token Lexer::varToken() {
-    string s;
+    std::string s;
     while (isAlpha(curr) || isDigit(curr)) {
         s += curr;
         advance();
     }
-    if (isDigit(s[0])) throw runtime_error("Variable can't be strat with digit");
+    if (isDigit(s[0])) throw std::runtime_error("Variable can't be strat with digit");
     return Token(TokenType::VAR, s);
 }
 
@@ -73,6 +72,6 @@ Token Lexer::next() {
         case ')' : return Token(TokenType::RPAREN, ")");
         case ',' : return Token(TokenType::COMMA, ",");
         default:
-            throw runtime_error("Invalid Operation or character");
+            throw std::runtime_error("Invalid Operation or character");
     }
 }

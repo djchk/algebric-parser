@@ -1,5 +1,4 @@
 #include "../include/Token.hpp"
-using namespace std;
 
 Token::Token(TokenType t) 
     : type(t), 
@@ -8,15 +7,15 @@ Token::Token(TokenType t)
 
 Token::Token(double num)
     : type(TokenType::NUM),
-      text(to_string(num)),
+      text(std::to_string(num)),
       num(num) {}
 
-Token::Token(TokenType t, const string& txt) 
+Token::Token(TokenType t, const std::string& txt) 
     : type(t),
       text(txt),
       num(0) {}
 
-string Token::formatToken() const {
+std::string Token::formatToken() const {
     switch (type) {
         case TokenType::NUM : return "[NUM : " + text + " ]";
         case TokenType::VAR : return "[VAR : " + text + " ]";
@@ -24,7 +23,6 @@ string Token::formatToken() const {
         case TokenType::SUB : return "[SUB : -]";
         case TokenType::MUL : return "[MUL : *]";
         case TokenType::DIV : return "[DIV : /]";
-        case TokenType::COMMA : return "[COMMA : ,]";
         case TokenType::LPAREN : return "[LPAREN]";
         case TokenType::RPAREN : return "[RPAREN]";
         case TokenType::END : return "[END]"; 
@@ -32,7 +30,7 @@ string Token::formatToken() const {
     return "[UNKNOWN]";
 }
 
-ostream& operator<<(ostream& os, const Token& t) {
+std::ostream& operator<<(std::ostream& os, const Token& t) {
     os << t.formatToken();
     return os;
 }

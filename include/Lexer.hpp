@@ -2,16 +2,15 @@
 
 #include <string>
 #include "Token.hpp"
-using namespace std;
 
 class Lexer {
 private:
-    string src;
+    std::string src;
     size_t index;
     char curr;
 
 public: 
-    Lexer (const string& txt);
+    Lexer (const std::string& txt);
     Token next();
 
 private: 

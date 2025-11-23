@@ -1,6 +1,5 @@
 #pragma once
 #include<string>
-using namespace std;
 
 // future plan to handle functional calls & power 
 enum class TokenType {
@@ -12,21 +11,20 @@ enum class TokenType {
     MUL,
     DIV,
     LPAREN,
-    RPAREN,
-    COMMA
+    RPAREN
 };
 
 class Token {
 public:
     TokenType type;
-    string text;
+    std::string text;
     double num;
 
     Token(TokenType t = TokenType::END);
     Token (double num);
-    Token(TokenType t, const string& txt);
+    Token(TokenType t, const std::string& txt);
 
-    string formatToken() const;
+    std::string formatToken() const;
     
     friend std::ostream& operator<<(std::ostream& os, const Token& t);
 };
