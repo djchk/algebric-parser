@@ -1,0 +1,56 @@
+# A generated .gitignore for cpp files.
+
+# Build artifacts
+*.o
+*.obj
+*.ko
+*.mod
+*.elf
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+*.bin
+*.out
+*.d
+
+# Temporary files
+*~
+*.bak
+*.swp
+*.tmp
+*.log
+
+# IDE-specific files (e.g., Visual Studio, CMake, VS Code)
+.vs/
+*.vcxproj*
+*.sln
+*.suo
+*.user
+*.opendb
+*.sdf
+*.ipch
+*.aps
+*.ncb
+*.vcproj
+*.vsprops
+*.vssscc
+*.vspscc
+*.pgm
+*.tlog
+
+# CMake build directories
+build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Operating System generated files
+.DS_Store
+Thumbs.db

@@ -8,3 +8,4 @@ Future impls (if I think to implement):
 - functional calls
 
 so here I have to first start with writing tokens.
+Late realization : I think I should implement a custom display format for debugging of tokens.
